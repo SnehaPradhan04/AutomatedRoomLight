@@ -1,6 +1,7 @@
-# Automatic Washroom Light Control
+# Automated Light Control
 
-This is a simple Arduino-based project for automatically controlling a washroom light based on the presence of people. The system turns on the light when someone enters the washroom and turns it off when there is no one inside.
+This project is based on Arduino Uno and IR sensors. This is a simple project that can automatically control a room's lights based on a person's presence on the room. 
+The system turns on the light when someone enters the room and turns it off when there is no one present.
 
 ## Table of Contents
 
@@ -8,51 +9,35 @@ This is a simple Arduino-based project for automatically controlling a washroom 
 - [Requirements](#requirements)
 - [Hardware Setup](#hardware-setup)
 - [Usage](#usage)
-- [Customization](#customization)
-- [License](#license)
 
 ## Features
 
-- Automatic control of a washroom light.
-- Sensors detect the entry and exit of people.
-- Uses Arduino for microcontroller programming.
-- Serial debugging for monitoring system behavior.
+- Automatic control of a room's light.
+- IR sensors can detect the entry and exit of people.
+- Arduino Uno is used for microcontroller programming.
 
 ## Requirements
 
-To replicate this project, you will need the following:
-
-- Arduino board (e.g., Arduino Uno)
-- Infrared or ultrasonic sensors (for detecting people)
-- LED light (or any light source you want to control)
-- Jumper wires
-- Breadboard (optional, for prototyping)
-- Arduino IDE for programming
-
+To make this project, we used the following:
+- IR sensors(for the obstacle/person detection)
+- Relay(to switch on and off the light source)
+- Arduino Uno board(hardware) and Arduino IDE(software)
+- Jumper wires for connection
+- A light source(that is to be controlled)
+- Power source(for Arduino Uno board and light source)
+- Breadboard for making the circuit
+  
 ## Hardware Setup
 
-1. Connect the infrared or ultrasonic sensors to digital pins on your Arduino. In the provided code, pin 7 is used for entry detection (LOW when someone enters) and pin 8 for exit detection (LOW when someone exits). Adjust the connections according to your sensor specifications.
+1. Connect the infrared sensors to digital pins on the Arduino Uno board. In the code, pin 7 is used for entry detection (LOW when someone enters) and pin 8 for exit detection (LOW when someone exits).
 
-2. Connect the LED light (or your chosen light source) to a digital pin (e.g., pin 9) on the Arduino. This pin will control the light based on the presence of people.
+2. Connect the light source to a digital pin (in the code we used pin 9) on the Arduino. This pin will control the light based on the presence of people as it will be the output pin.
 
-3. Ensure proper power supply for your Arduino and sensors.
+3. Ensure proper power supply to the Arduino, sensors and light source.
 
-## Usage
 
-1. Upload the provided Arduino sketch (the code you have) to your Arduino board using the Arduino IDE.
+## Usage of the project
 
-2. Open the Arduino Serial Monitor to monitor the system behavior. It will display messages indicating the number of people inside the washroom and their entry/exit status.
+This project was made with aim to save electricity and electricity charges by turning off the the room's lights if mistakenly left on.
 
-3. Test the system by entering and exiting the washroom. The light should automatically turn on when someone enters and turn off when there are no people inside.
 
-## Customization
-
-You can customize this project to fit your specific requirements:
-
-- Adjust the pin numbers for sensors and the light source in the Arduino code if you have different hardware connections.
-- Modify the delay duration (e.g., `delay(300)`) to control how quickly the system responds to changes in presence.
-- Implement additional features or sensors as needed for your application.
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE). You are free to use, modify, and distribute it as per the terms of the license.
