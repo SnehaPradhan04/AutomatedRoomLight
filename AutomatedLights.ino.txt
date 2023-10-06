@@ -1,14 +1,14 @@
 
-//Automatic washroom light
+//Automated room light
 int total=0;
 
-void setup() {
-  // put your setup code here, to run once:
-
-pinMode(7, INPUT);
-pinMode(8, INPUT);
-pinMode(9, OUTPUT);
-Serial.begin(9600);
+void setup() 
+{
+  // setup code
+  pinMode(7, INPUT);
+  pinMode(8, INPUT);
+  pinMode(9, OUTPUT);
+  Serial.begin(9600);
 }
 
 void show()
@@ -18,13 +18,13 @@ Serial.println(total);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  //main code that will repeatedly run
 
 if(digitalRead(7) ==LOW){
    while(digitalRead(8) == HIGH){
    }
   
-   Serial.print("person entered there are ");
+   Serial.print("person entered");
    total++;
    show();
    delay(300);
@@ -33,7 +33,7 @@ if(digitalRead(7) ==LOW){
   while (digitalRead(7) == HIGH){
   }
 
-  Serial.print("person exited there are ");
+  Serial.print("person exited");
   total--;
   show();
   delay(300);
