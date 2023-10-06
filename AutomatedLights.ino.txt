@@ -24,7 +24,7 @@ if(digitalRead(7) ==LOW){
    while(digitalRead(8) == HIGH){
    }
   
-   Serial.print("person entered");
+   Serial.print("person entered there are ");
    total++;
    show();
    delay(300);
@@ -33,7 +33,7 @@ if(digitalRead(7) ==LOW){
   while (digitalRead(7) == HIGH){
   }
 
-  Serial.print("person exited");
+  Serial.print("person exited there are ");
   total--;
   show();
   delay(300);
