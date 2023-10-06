@@ -1,0 +1,53 @@
+
+//Automatic washroom light
+int total=0;
+
+void setup() {
+  // put your setup code here, to run once:
+
+pinMode(7, INPUT);
+pinMode(8, INPUT);
+pinMode(9, OUTPUT);
+Serial.begin(9600);
+}
+
+void show()
+{
+Serial.println(total);
+   Serial.print("people in room.");
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+if(digitalRead(7) ==LOW){
+   while(digitalRead(8) == HIGH){
+   }
+  
+   Serial.print("person entered there are ");
+   total++;
+   show();
+   delay(300);
+   
+}  else if (digitalRead(8) == LOW){
+  while (digitalRead(7) == HIGH){
+  }
+
+  Serial.print("person exited there are ");
+  total--;
+  show();
+  delay(300);
+ 
+}
+
+if(total==1)
+{
+  digitalWrite(9,1);
+}
+else
+{
+   digitalWrite(9,0);
+}
+
+}
+
